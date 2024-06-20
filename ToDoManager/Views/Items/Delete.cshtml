@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Delete Tasks";
+}
+@model ToDoManager.Models.Item
+<h4>Are you sure you want to delete?</h4>
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ItemId"/>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a class="btn btn-secondary" asp-action="ViewAll">Back to List</a>
+    </form>
+</div>

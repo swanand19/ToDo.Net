@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Task Details";
+}
+@model ToDoManager.Models.Item
+
+<div>
+    <h2>Details</h2>
+
+    <div>
+        <h4>Item/Task</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ItemName)
+            </dt>
+            <dd class="col-sm-2">
+                @Html.DisplayFor(model=>model.ItemName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model=>model.ItemDescription)
+            </dt>
+            <dd class="col-sm-2">
+                @Html.DisplayFor(model => model.ItemDescription)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ItemDate)
+            </dt>
+            <dd class="col-sm-2">
+                @Html.DisplayFor(model => model.ItemDate)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.ItemId">Edit</a>
+        <a class="btn btn-secondary" asp-action="ViewAll">Back to List</a>
+    </div>
+</div>

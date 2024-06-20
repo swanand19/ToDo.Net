@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "View All Tasks";
+}
+@model IEnumerable<ToDoManager.Models.Item>
+
+<table class="table mt-3">
+    <thead>
+        <td>Item Id</td>
+        <td>Item Name</td>
+        <td>Item Description</td>
+        <td>Hire Date</td>
+        <td>Actions</td>
+    </thead>
+    <tbody class="mt-2">
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => i.ItemId)</td>
+                <td>@Html.DisplayFor(modelItem => i.ItemName)</td>
+                <td>@Html.DisplayFor(modelItem => i.ItemDescription)</td>
+                <td>@Html.DisplayFor(modelItem => i.ItemDate)</td>
+                <td>
+                    <a class="btn btn-secondary ms-lg-1" asp-action="Edit" asp-route-id="@i.ItemId">Edit</a> |
+                    <a class="btn btn-secondary ms-lg-1" asp-action="Details" asp-route-id="@i.ItemId">Details</a> |
+                    <a class="btn btn-secondary ms-lg-1" asp-action="Delete" asp-route-id="@i.ItemId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

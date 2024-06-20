@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Add New Tasks";
+}
+@model ToDoManager.Models.Item
+
+<h2>Add New To-Do Item</h2>
+
+<form asp-action="AddNew">
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label asp-for="ItemName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ItemName" class="form-control" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ItemDescription" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ItemDescription" class="form-control" />
+                <span asp-validation-for="ItemDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ItemDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ItemDate" class="form-control" />
+                <span asp-validation-for="ItemDate" class="text-danger" ty></span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary mt-3" />
+            </div>
+        </div>
+    </div>
+</form>
